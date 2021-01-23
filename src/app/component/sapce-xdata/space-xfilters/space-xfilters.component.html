@@ -1,0 +1,42 @@
+<div class="filters">
+  <h3>Filters</h3>
+  <div class="launch-year">
+    <p>Launch Year</p>
+    <hr />
+    <ng-container *ngFor="let year of filterYears">
+      <span class="col-xs-6 "
+        ><button class="btn btn-success" (click)="filterByYear(year)">
+          {{ year }}
+        </button></span
+      >
+    </ng-container>
+  </div>
+  <div class="successful-launch">
+    <p>Successful Launch</p>
+    <hr />
+    <span class="col-xs-6"
+      ><button class="btn btn-success" (click)="filterByLaunch('true')">
+        True
+      </button></span
+    >
+    <span class="col-xs-6"
+      ><button class="btn btn-success" (click)="filterByLaunch('false')">
+        False
+      </button></span
+    >
+  </div>
+  <div class="successful-landing">
+    <p>Successful Landing</p>
+    <hr />
+    <span class="col-xs-6"
+      ><button class="btn btn-success" (click)="filterByLanding('true')">
+        True
+      </button></span
+    >
+    <span class="col-xs-6"
+      ><button class="btn btn-success" (click)="filterByLanding('false')">
+        False
+      </button></span
+    >
+  </div>
+</div>
