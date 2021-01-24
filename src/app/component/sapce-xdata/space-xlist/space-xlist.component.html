@@ -31,13 +31,13 @@
           <div class="form-group row">
             <label class="pad-l-0 col-xs-6 col-sm-7">Successful Launch: </label>
             <div class="col-xs-6 col-sm-5">
-              {{ space.launch_success || "-" }}
+              {{ space.launch_success || "false" }}
             </div>
           </div>
           <div class="form-group row">
             <label class="pad-l-0 col-xs-6 col-sm-7">Successful Landing: </label>
             <div class="col-xs-6 col-sm-5">
-              {{ space.launch_success || "-" }}
+              {{ space?.rocket?.first_stage?.cores[0]?.land_success || "false" }}
             </div>
           </div>
         </div>

@@ -1,29 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { SpaceXDataService } from 'src/app/service/space-xdata.service';
+import { Component, OnInit } from "@angular/core";
+import { SpaceXDataService } from "src/app/service/space-xdata.service";
 
 @Component({
-  selector: 'app-space-xlist',
-  templateUrl: './space-xlist.component.html',
-  styleUrls: ['./space-xlist.component.scss']
+  selector: "app-space-xlist",
+  templateUrl: "./space-xlist.component.html",
+  styleUrls: ["./space-xlist.component.scss"],
 })
 export class SpaceXlistComponent implements OnInit {
-
   public spacexData: any = [];
-  constructor(
-    private spacexDataService: SpaceXDataService
-    ) { }
+  constructor(private spacexDataService: SpaceXDataService) {}
 
   ngOnInit(): void {
     this.getSpacexList();
-    this.spacexDataService.filteredLaunches.subscribe(response=>{
+    this.spacexDataService.filteredLaunches.subscribe((response) => {
       this.spacexData = response || [];
-    })
+      console.log('nik',this.spacexData)
+    });
   }
 
-  public getSpacexList(): void{
+  public getSpacexList(): void {
     const filters = {};
-    this.spacexDataService.getSpaceXList(filters).subscribe((resposne)=>{
+    this.spacexDataService.getSpaceXList(filters).subscribe((resposne) => {
       this.spacexData = resposne || [];
-    })
+    });
   }
 }
