@@ -8,20 +8,25 @@ import { SpaceXDataService } from "src/app/service/space-xdata.service";
 })
 export class SpaceXlistComponent implements OnInit {
   public spacexData: any = [];
+  public loading: boolean = true;
   constructor(private spacexDataService: SpaceXDataService) {}
 
   ngOnInit(): void {
     this.getSpacexList();
     this.spacexDataService.filteredLaunches.subscribe((response) => {
-      this.spacexData = response || [];
-      console.log('nik',this.spacexData)
+      if(Array.isArray(response)) {
+        this.spacexData = response || [];
+      }
     });
   }
 
   public getSpacexList(): void {
     const filters = {};
-    this.spacexDataService.getSpaceXList(filters).subscribe((resposne) => {
-      this.spacexData = resposne || [];
+    this.spacexDataService.getSpaceXList(filters).subscribe((response) => {
+      if(Array.isArray(response) && response.length > 0) {
+        this.loading = false;
+        this.spacexData = response;;
+      }
     });
   }
 }

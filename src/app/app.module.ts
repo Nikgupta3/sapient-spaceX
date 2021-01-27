@@ -10,6 +10,7 @@ import { SapceXdataComponent } from './component/sapce-xdata/sapce-xdata.compone
 import { SpaceXfiltersComponent } from './component/sapce-xdata/space-xfilters/space-xfilters.component';
 import { SpaceXlistComponent } from './component/sapce-xdata/space-xlist/space-xlist.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './component/footer/footer.component';
     SapceXdataComponent,
     SpaceXfiltersComponent,
     SpaceXlistComponent,
-    FooterComponent
+    FooterComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

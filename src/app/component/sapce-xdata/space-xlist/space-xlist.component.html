@@ -1,3 +1,7 @@
+<ng-container *ngIf="loading">
+  <app-spinner></app-spinner>
+</ng-container>
+<ng-container *ngIf="!loading">
 <div class="row list-spacex" *ngIf="spacexData.length">
   <div
     *ngFor="let space of spacexData"
@@ -48,3 +52,4 @@
 <div *ngIf="!spacexData.length" style="text-align: center; margin-top: 20%">
   <h1>No Data Found.</h1>
 </div>
+</ng-container>
